@@ -1,0 +1,663 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>phoolay chemist & cruise optical</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f9ff;
+    color:#17324d;
+}
+
+header{
+    background:linear-gradient(135deg,#0066cc,#00b8d9,#ff7b00);
+    color:white;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+    font-weight:bold;
+}
+
+.hero{
+    min-height:620px;
+    padding:70px 7%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+    background:linear-gradient(135deg,#ffffff,#e8f7ff);
+}
+
+.hero-text{
+    max-width:600px;
+}
+
+.hero-text span{
+    color:#ff7100;
+}
+
+.hero h1{
+    font-size:55px;
+    line-height:1.05;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:18px;
+    color:#5d6d7e;
+    margin-bottom:25px;
+}
+
+.badge{
+    display:inline-block;
+    background:#e2f7e9;
+    color:#16833d;
+    padding:9px 16px;
+    border-radius:30px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.rating{
+    margin-bottom:25px;
+    font-weight:bold;
+}
+
+.rating b{
+    background:#159447;
+    color:white;
+    padding:8px 12px;
+    border-radius:8px;
+}
+
+.buttons a{
+    display:inline-block;
+    padding:14px 20px;
+    margin:5px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.call{
+    background:#087bd1;
+    color:white;
+}
+
+.whatsapp{
+    background:#20b957;
+    color:white;
+}
+
+.location{
+    background:white;
+    color:#0871bd;
+    border:1px solid #d4e5f2;
+}
+
+.hero-img{
+    width:45%;
+}
+
+.hero-img img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    border-radius:30px;
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
+}
+
+section{
+    padding:70px 7%;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.title h2{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.title p{
+    color:#66788b;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,50,100,.08);
+    border:1px solid #e5edf5;
+}
+
+.card h3{
+    margin:10px 0;
+    color:#075fa7;
+}
+
+.card p{
+    color:#657588;
+}
+
+.icon{
+    font-size:32px;
+}
+
+.services{
+    background:white;
+}
+
+.service{
+    border-left:5px solid #087bd1;
+}
+
+.pills{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.pill{
+    background:white;
+    padding:12px 18px;
+    border-radius:30px;
+    border:1px solid #dbe7f1;
+    font-weight:bold;
+    box-shadow:0 5px 15px rgba(0,0,0,.05);
+}
+
+.highlights{
+    background:linear-gradient(135deg,#062c55,#087bd1);
+    color:white;
+}
+
+.highlights .title p{
+    color:#d9edff;
+}
+
+.highlight-card{
+    background:rgba(255,255,255,.12);
+    color:white;
+    border:1px solid rgba(255,255,255,.2);
+}
+
+.highlight-card h3{
+    color:white;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr;
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    border-radius:20px;
+}
+
+.gallery img:first-child{
+    height:535px;
+    grid-row:span 2;
+}
+
+.contact{
+    background:linear-gradient(135deg,#fff1e5,#eaf8ff);
+}
+
+.contact-box{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 12px 35px rgba(0,50,100,.09);
+}
+
+.contact-box h3{
+    font-size:25px;
+    margin-bottom:20px;
+    color:#075fa7;
+}
+
+.info{
+    padding:14px 0;
+    border-bottom:1px solid #e5edf4;
+}
+
+.info strong{
+    display:block;
+}
+
+.info span{
+    color:#637589;
+}
+
+footer{
+    background:#061e39;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+@media(max-width:850px){
+
+.hero{
+    flex-direction:column;
+    text-align:center;
+}
+
+.hero-img{
+    width:100%;
+}
+
+.cards{
+    grid-template-columns:1fr 1fr;
+}
+
+.gallery{
+    grid-template-columns:1fr 1fr;
+}
+
+.gallery img:first-child{
+    height:300px;
+    grid-column:span 2;
+    grid-row:auto;
+}
+
+nav{
+    display:none;
+}
+
+}
+
+@media(max-width:550px){
+
+.hero h1{
+    font-size:38px;
+}
+
+.cards{
+    grid-template-columns:1fr;
+}
+
+.gallery{
+    grid-template-columns:1fr;
+}
+
+.gallery img:first-child{
+    grid-column:auto;
+}
+
+.hero-img img{
+    height:300px;
+}
+
+.title h2{
+    font-size:32px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+phoolay chemist & cruise optical
+</div>
+
+<nav>
+<a href="#about">about</a>
+<a href="#services">services</a>
+<a href="#photos">photos</a>
+<a href="#contact">contact</a>
+</nav>
+
+</header>
+
+
+<section class="hero">
+
+<div class="hero-text">
+
+<div class="badge">✓ verified • opticians</div>
+
+<h1>
+phoolay <span>chemist & cruise optical</span>
+</h1>
+
+<p>
+Gangyal, Jammu
+</p>
+
+<div class="rating">
+<b>★ 4.0</b> &nbsp; 14 ratings &nbsp; • &nbsp; 34 years in business
+</div>
+
+<div class="buttons">
+
+<a class="call" href="tel:+919724289428">
+📞 call now
+</a>
+
+<a class="whatsapp" href="https://wa.me/919906107080">
+💬 whatsapp
+</a>
+
+<a class="location" href="#contact">
+📍 location
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-img">
+
+<img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=1000&q=85">
+
+</div>
+
+</section>
+
+
+<section id="about">
+
+<div class="title">
+
+<h2>business information</h2>
+
+<p>
+important information about the business
+</p>
+
+</div>
+
+
+<div class="cards">
+
+<div class="card">
+<div class="icon">📍</div>
+<h3>location</h3>
+<p>Gangyal, Jammu</p>
+</div>
+
+<div class="card">
+<div class="icon">🏆</div>
+<h3>experience</h3>
+<p>34 years in business</p>
+</div>
+
+<div class="card">
+<div class="icon">🕙</div>
+<h3>opening information</h3>
+<p>Open Now • Until 10:00 PM</p>
+</div>
+
+<div class="card">
+<div class="icon">📅</div>
+<h3>year of establishment</h3>
+<p>1992</p>
+</div>
+
+<div class="card">
+<div class="icon">⭐</div>
+<h3>rating</h3>
+<p>4.0 ★ • 14 ratings</p>
+</div>
+
+<div class="card">
+<div class="icon">👓</div>
+<h3>category</h3>
+<p>Opticians</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="services" id="services">
+
+<div class="title">
+
+<h2>services</h2>
+
+<p>services listed for the business</p>
+
+</div>
+
+
+<div class="cards">
+
+<div class="card service">
+<h3>home delivery</h3>
+<p>listed service</p>
+</div>
+
+<div class="card service">
+<h3>sports fracture rehabilitation</h3>
+<p>listed service</p>
+</div>
+
+<div class="card service">
+<h3>cardiopulmonary rehabilitation</h3>
+<p>listed service</p>
+</div>
+
+<div class="card service">
+<h3>prenatal check up</h3>
+<p>listed service</p>
+</div>
+
+<div class="card service">
+<h3>pelvic rehabilitation</h3>
+<p>listed service</p>
+</div>
+
+<div class="card service">
+<h3>rheumatological rehabilitation</h3>
+<p>listed service</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="title">
+
+<h2>treatments</h2>
+
+</div>
+
+<div class="pills">
+
+<div class="pill">gynaecological cancer treatment</div>
+<div class="pill">neck pain</div>
+<div class="pill">viral fever</div>
+<div class="pill">depression</div>
+
+</div>
+
+</section>
+
+
+<section class="highlights">
+
+<div class="title">
+
+<h2>business highlights</h2>
+
+<p>
+highlights from the supplied information
+</p>
+
+</div>
+
+
+<div class="cards">
+
+<div class="card highlight-card">
+<div class="icon">💬</div>
+<h3>psychotherapy for couples</h3>
+</div>
+
+<div class="card highlight-card">
+<div class="icon">🚭</div>
+<h3>tobacco de-addiction</h3>
+</div>
+
+<div class="card highlight-card">
+<div class="icon">✂️</div>
+<h3>functional endoscopic...</h3>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="photos">
+
+<div class="title">
+
+<h2>photo gallery</h2>
+
+<p>
+attractive optical and eyewear visuals
+</p>
+
+</div>
+
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=1200&q=85">
+
+<img src="https://images.unsplash.com/photo-1577803645773-f96470509666?auto=format&fit=crop&w=900&q=85">
+
+<img src="https://images.unsplash.com/photo-1509695507497-903c140c43b0?auto=format&fit=crop&w=900&q=85">
+
+</div>
+
+</section>
+
+
+<section class="contact" id="contact">
+
+<div class="title">
+
+<h2>contact & location</h2>
+
+<p>connect with the business</p>
+
+</div>
+
+
+<div class="contact-box">
+
+<h3>phoolay chemist & cruise optical</h3>
+
+<div class="info">
+<strong>📞 call</strong>
+<span>+91 97242 89428</span>
+</div>
+
+<div class="info">
+<strong>💬 whatsapp</strong>
+<span>+91 99061 07080</span>
+</div>
+
+<div class="info">
+<strong>📍 address</strong>
+<span>
+Opposite Shree Hanuman Temple Gangyal, Main Road Gangyal,
+Pillar No 20 ICICI Bank Lane, Gangyal, Jammu-180010,
+Jammu And Kashmir
+</span>
+</div>
+
+<div class="info">
+<strong>📅 established</strong>
+<span>1992</span>
+</div>
+
+<div class="info">
+<strong>🕙 opening information</strong>
+<span>Open Now • Until 10:00 PM</span>
+</div>
+
+<br>
+
+<div class="buttons">
+
+<a class="call" href="tel:+919724289428">
+📞 call now
+</a>
+
+<a class="whatsapp" href="https://wa.me/919906107080">
+💬 whatsapp now
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<p>
+© 2026 phoolay chemist & cruise optical
+</p>
+
+<p>
+Gangyal, Jammu
+</p>
+
+</footer>
+
+</body>
+</html>
